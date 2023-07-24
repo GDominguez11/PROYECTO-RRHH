@@ -14,6 +14,14 @@ if (isset($_POST['acceder'])) {
     $respuesta = $usuario->accesoSistema($datos); //se envian los datos a la funcion accesoUsuario de Logincontrolador
 }
 ?>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión | Sistema X</title>
+    <link rel="stylesheet" href="../vistas/css/Login.css">
+</head>
+<body>
     <div class="box">
         <form action="" method="POST">
             <h2>Login</h2>
@@ -27,6 +35,7 @@ if (isset($_POST['acceder'])) {
                 <span>Clave</span>
                 <i></i>
            </div>
+           <a href="<?php echo SERVERURL?>recuperacion-contrasena/" id="olvido-contrasena">¿Olvidaste tu contraseña?</a>
            <input type="submit" name="acceder" placeholder="Ingresar">
         </form>
     </div>

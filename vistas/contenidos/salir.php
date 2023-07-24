@@ -25,5 +25,5 @@ if (session_status() == PHP_SESSION_NONE) {
 Bitacora::guardar_bitacora($datos_bitacora); */
 session_unset();
 session_destroy();
-echo "<script>window.location.replace('http//localhost/sistema-inventario/login/');</script>";
+header("Location:".SERVERURL."login/"); 
 die();

@@ -3,13 +3,6 @@ ob_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="icon" type="image/x-icon" href="../vistas/assets/img/logo.ico" />
-	<?php include "./vistas/inc/archivos_css.php"; ?>
-</head>
-<body>
 	<?php
 		$peticionAjax=false;
 		require_once "./controladores/vistasControlador.php";
@@ -17,7 +10,8 @@ ob_start();
 
 		$vistas=$IV->obtener_vistas_controlador();
 
-		if($vistas=="login" || $vistas=="404"){
+		if($vistas=="login" || $vistas=="404" || $vistas=="recuperacion-contrasena" ||$vistas=="verificar-codigo"
+		|| $vistas=="cambio-contrasena"){
 			require_once "./vistas/contenidos/".$vistas.".php";
 
 		}else{

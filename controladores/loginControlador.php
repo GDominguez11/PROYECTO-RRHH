@@ -4,6 +4,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 }
 
 require_once ("./modelos/loginModelo.php");
+require_once "./controladores/emailControlador.php";
 
 class loginUsuarios extends Usuario{
 
@@ -56,15 +57,15 @@ class loginUsuarios extends Usuario{
 			//Se valida si el usuario no está inactivo para realizar la recuperacion de contraseña
 			if (isset($array['usuario'])>0){
 				//se revisa la existencia del usuario y el metodo de recuperacion seleccionado
-						$_SESSION['usuario_rec']=$array['usuario'];
-						$_SESSION['respuesta'] = 'Correo enviado';
-						$agg_correo = new Correo(); 
+					$_SESSION['usuario_rec']=$array['usuario'];
+					$_SESSION['respuesta'] = 'Correo enviado';
+					$agg_correo = new Correo(); 
       				$respuesta = $agg_correo->enviarCorreo($correoEnviado);
-                  return "<script> window.location.href='".SERVERURL."recuperacion-clave/'; </script>";
-					die();
+                  return "<script> window.location.href='".SERVERURL."recuperacion-contrasena/'; </script>";
+					die(); 
 			}else{
 				$_SESSION['respuesta'] = 'Usuario no existe';
-				return header("Location:".SERVERURL."recuperacion-clave/");
+				return header("Location:".SERVERURL."recuperacion-contrasena/");
 				die();
 			}
 		}
