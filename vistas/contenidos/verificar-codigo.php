@@ -56,7 +56,7 @@
             ?> 
             <h3>Verificar Código de Seguridad</h3>
             <div class="inputBox">
-                 <input type="number" name="text" required>
+                 <input type="number" name="text" style="text-align: center" required>
                  <span>Ingrese el código de seguridad</span>
                  <i></i>
             </div>

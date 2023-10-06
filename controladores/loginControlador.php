@@ -21,25 +21,22 @@ class loginUsuarios extends Usuario{
 				$hash=$fila['contrasena'];
 			}
 
-      if(password_verify($contrasena, $hash)){
+		if(password_verify($contrasena, $hash)){
 			$verificarDatos = new Usuario(); //se crea una instancia en el archivo modelo de Login
 			$respuesta = $verificarDatos->accesoUsuario($usuario, $hash); //datos recibidos del archivo modelo de Login
+				
 			foreach ($respuesta as $fila) {
 				$array['id'] = $fila['id_usuario'];
 				$array['usuario'] = $fila['usuario'];
-         }
-            //validacion en caso de encontrar un usuario en la base de datos
-            if(isset($array['usuario'])){
-               //validacion del estado del usuario
-               //si es Activo puede ingresar al sistema, de no ser asi se vuelve a redirigir al login
-					return header("Location:".SERVERURL."home/"); 
-				}
+			}
 				
-   			}else{
-				echo "Sali con tu mujerr";
-		
-			}	
-		}
+			return header("Location:".SERVERURL."home/"); 
+		}else{
+			$_SESSION['respuesta'] = 'Usuario o contraseña inválida';
+			return header("Location:".SERVERURL."login/");
+			die();
+		}	
+	}
 
 
    //función que se encarga de validar el usuario ingresado para la recuperacion de contraseña
@@ -75,7 +72,7 @@ class loginUsuarios extends Usuario{
 		public function modificarContrasena($datos){
 			$contrasena_nueva=ConexionBD::limpiar_cadena($datos['contrasena_nueva']);
 			$conf_contrasena_nueva=ConexionBD::limpiar_cadena($datos['conf_contrasena_nueva']);
-         $correo=ConexionBD::limpiar_cadena($datos['email']);
+            $correo=ConexionBD::limpiar_cadena($datos['email']);
 			$array=array();
 
 

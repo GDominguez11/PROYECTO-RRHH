@@ -1,18 +1,23 @@
 <?php
+	//verifica si hay sesiones iniciadas
 	if (session_status() == PHP_SESSION_NONE) {
 		session_start();
 	}
 
-    //llamado al controlador de login
-    require_once 'controladores/emailControlador.php';
-    $enviarCodigo = new Correo(); //se crea nueva instancia de usuario
+	//llamado al controlador de login
+    require_once 'controladores/loginControlador.php';
+    $usuario = new loginUsuarios(); //se crea nueva instancia de usuario
 
-    //valdacion para ver si se recibieron datos de ingreso
-    if (isset($_POST['acceder'])) {
-        $codigo =  $_POST['text'];
-        $respuesta = $enviarCodigo->verificaCodigoToken($codigo); //se envian los datos a la funcion accesoUsuario de modelo Login
+	//valdacion para ver si se recibieron datos de ingreso
+     if (isset($_POST['acceder'])) {
+		$datos = array(
+          'contrasena_nueva'=> $_POST['password'],
+		  'conf_contrasena_nueva'=> $_POST['conf-password'],
+          'email'=> $_SESSION['correo']
+        );
+        $respuesta = $usuario->modificarContrasena($datos); //se envian los datos a la funcion accesoUsuario de modelo Login
     }
-?>
+	?>
 
 <head>
     <meta charset="UTF-8">
@@ -23,40 +28,37 @@
     <link rel="stylesheet" href="../vistas/css/Login.css">
 </head>
 <body>
-    <div class="box-recuperacion">
+    <div class="box">
         <form action="" method="POST">
-         <!-- <?php
+         <?php
             if(isset($_SESSION['respuesta'])){
 				switch($_SESSION['respuesta']){
-					case 'Usuario si existe':
-						
+					case 'Cambio de contraseña exitoso':
+						echo "<script>
+                            setTimeout(function(){location.href='".SERVERURL."login/'} , 3500); </script>";
                         echo '
 						<style>
                             .box-recuperacion{height: 390px;} 
 						</style>
-						<div div class="alert alert-success text-center style="font-size: 17px;" role="alert">Usuario si existe</div>';
+						<div div class="alert alert-success text-center style="font-size: 17px;" role="alert">Contraseña cambiada 
+                        exitosamente. Se redirigirá al login en unos segundos...</div>';
                     break;
-                    case 'Usuario no existe':
-						echo '
-						    <style>
-                                .box-recuperacion{height: 390px;} 
-							</style>
-							<div div class="alert alert-danger text-center style="font-size: 17px;" role="alert">Usuario no existe</div>';
-					break;
                     }
                 }
-            ?>  -->
+            ?>
             <h3>Cambiar Contraseña</h3>
             <div class="inputBox">
-                 <input type="password" name="text" required>
+                 <input type="password" name="password" id="password" required>
                  <span>Ingrese su nueva contraseña</span>
                  <i></i>
             </div>
+            <span id="spanClave" style="color:red; font-size:15px;"></span>
             <div class="inputBox">
-                 <input type="password" name="text" required>
+                 <input type="password" name="conf-password" id="conf-password" required>
                  <span>Confirme su nueva contraseña</span>
                  <i></i>
             </div>
-            <button type="submit" name="acceder">Guardar Cambios</button>
+            <span id="spanConfClave" style="color:white; font-size:15px;"></span>
+            <button type="submit" name="acceder" id="btn-enviar">Guardar Cambios</button>
         </form>
     </div>

@@ -18,12 +18,27 @@ if (isset($_POST['acceder'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Iniciar Sesión | Sistema X</title>
-    <link rel="stylesheet" href="../vistas/css/Login.css">
+    <link rel="stylesheet" href="<?php echo SERVERURL; ?>/vistas/css/Login.css">
 </head>
 <body>
     <div class="box">
         <form action="" method="POST">
+        <?php
+            if(isset($_SESSION['respuesta'])){
+				switch($_SESSION['respuesta']){
+					case 'Usuario o contraseña inválida':
+                        echo '
+						<style>
+                            .box{height: 500px;} 
+						</style>
+						<div div class="alert alert-danger text-center style="font-size: 17px;" role="alert">Usuario y/o contraseña inválidos</div>';
+                    break;
+                    
+                    }
+                }
+            ?> 
             <h2>Login</h2>
             <div class="inputBox">
                  <input type="text" name="text" required>
@@ -31,7 +46,7 @@ if (isset($_POST['acceder'])) {
                  <i></i>
             </div>
             <div class="inputBox">
-                <input type="clave" name="clave" required>
+                <input type="password" name="clave" required>
                 <span>Clave</span>
                 <i></i>
            </div>
