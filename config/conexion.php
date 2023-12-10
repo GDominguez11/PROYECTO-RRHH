@@ -4,7 +4,7 @@ class ConexionBD{
     protected $manejador = "mysql";
     private static $servidor = "localhost";
     private static $usuario = "root";
-    private static $pass = "sistemas.2022";
+    private static $pass = "";
     protected $db_name = "sistema_rrhh";
     protected $conexion;
 

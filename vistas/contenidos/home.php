@@ -3,6 +3,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="../vistas/assets/img/logo.ico" />
     <link rel="stylesheet" href="../vistas/css/style.css">
+    <title>Home | Sistema X</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
 
