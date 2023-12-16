@@ -3,20 +3,15 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+require_once "./librerias/vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 if($peticionAjax){
-    require_once '../librerias/vendor/PHPMailer/src/Exception.php';
-    require_once '../librerias/vendor/PHPMailer/src/PHPMailer.php';
-    require_once '../librerias/vendor/PHPMailer/src/SMTP.php';
     require_once "../config/conexion.php";
     require_once "../config/serverMail.php";
     require_once '../modelos/loginModelo.php';
 }else{
-	require_once './librerias/vendor/PHPMailer/src/Exception.php';
-    require_once './librerias/vendor/PHPMailer/src/PHPMailer.php';
-    require_once './librerias/vendor/PHPMailer/src/SMTP.php';
     require_once "./config/conexion.php";
     require_once "./config/serverMail.php";
     require_once './modelos/loginModelo.php';

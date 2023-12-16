@@ -20,7 +20,7 @@ if (isset($_POST['acceder'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>Iniciar Sesión | Sistema X</title>
-    <link rel="stylesheet" href="<?php echo SERVERURL; ?>/vistas/css/Login.css">
+    <link rel="stylesheet" href="<?php echo SERVERURL; ?>/assets/css/Login.css">
 </head>
 <body>
     <div class="box">
@@ -51,6 +51,6 @@ if (isset($_POST['acceder'])) {
                 <i></i>
            </div>
            <a href="<?php echo SERVERURL?>recuperacion-contrasena/" id="olvido-contrasena">¿Olvidaste tu contraseña?</a>
-           <input type="submit" name="acceder" placeholder="Ingresar">
+           <input type="submit" name="acceder" value="Ingresar">
         </form>
     </div>

@@ -33,7 +33,7 @@ ob_start();
 	<?php
 	include  $vistas;
 		}
-		include "./vistas/inc/Script.php";
+		include "./assets/inc/Script.php";
 	?>
 </body>
 </html>

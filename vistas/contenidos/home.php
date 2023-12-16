@@ -2,7 +2,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<link rel="icon" type="image/x-icon" href="../vistas/assets/img/logo.ico" />
-    <link rel="stylesheet" href="../vistas/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <title>Home | Sistema X</title>
     <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
 </head>
@@ -75,7 +75,7 @@
         <div class="container__card">
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image:url(../vistas/assets/images/2.jpg)"> 
+                    <div class="card__front" style="background-image:url(../assets/images/2.jpg)"> 
                         <div class="bg"></div>
                         <div class="body__card__front">
                             <h1>CATEDRÁTICOS</h1>
@@ -92,7 +92,7 @@
             </div>
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image:url(../vistas/assets/images/22.jpg)"> 
+                    <div class="card__front" style="background-image:url(../assets/images/22.jpg)"> 
                         <div class="bg"></div>
                         <div class="body__card__front">
                             <h1>PERSONAL ADMINISTRATIVO </h1>
@@ -109,7 +109,7 @@
             </div>
             <div class="card__father">
                 <div class="card">
-                    <div class="card__front" style="background-image:url(../vistas/assets/images/3.jpeg)"> 
+                    <div class="card__front" style="background-image:url(../assets/images/3.jpeg)"> 
                         <div class="bg"></div>
                         <div class="body__card__front">
                             <h1>OFICIALES Y SUB-OFICIALES</h1>
