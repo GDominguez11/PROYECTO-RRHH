@@ -8,8 +8,8 @@
 			$listaBlanca=["home","home2","logout","tinyfilemanager"];
 			$listaLogin=["login","recuperacion-contrasena","verificar-codigo","cambio-contrasena"];
 			if(in_array($vistas, $listaBlanca)){
-				if(is_file("./vistas/contenidos/".$vistas.".php")){
-					$contenido="./vistas/contenidos/".$vistas.".php";
+				if(is_file("./views/contenidos/".$vistas.".php")){
+					$contenido="./views/contenidos/".$vistas.".php";
 				}else{
 					$contenido="404";
 				}

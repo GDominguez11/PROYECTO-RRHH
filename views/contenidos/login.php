@@ -1,6 +1,6 @@
 <?php
 //llamado al controlador de login
-require_once 'controladores/loginControlador.php';
+require_once 'controllers/loginControlador.php';
 $usuario = new loginUsuarios(); //se crea nueva instancia de usuario
 
 //valdacion para ver si se recibieron datos de ingreso

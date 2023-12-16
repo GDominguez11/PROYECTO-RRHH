@@ -3,8 +3,8 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
    session_start();
 }
 
-require_once ("./modelos/loginModelo.php");
-require_once "./controladores/emailControlador.php";
+require_once ("./models/loginModelo.php");
+require_once "./controllers/emailControlador.php";
 
 class loginUsuarios extends Usuario{
 

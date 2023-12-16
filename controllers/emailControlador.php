@@ -3,18 +3,18 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-require_once "./librerias/vendor/autoload.php";
+require_once "./library/vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 if($peticionAjax){
     require_once "../config/conexion.php";
     require_once "../config/serverMail.php";
-    require_once '../modelos/loginModelo.php';
+    require_once '../models/loginModelo.php';
 }else{
     require_once "./config/conexion.php";
     require_once "./config/serverMail.php";
-    require_once './modelos/loginModelo.php';
+    require_once './models/loginModelo.php';
 }
 
 

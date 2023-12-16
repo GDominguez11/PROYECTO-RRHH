@@ -4,7 +4,7 @@
 	}
 
     //llamado al controlador de login
-    require_once 'controladores/emailControlador.php';
+    require_once 'controllers/emailControlador.php';
     $enviarCodigo = new Correo(); //se crea nueva instancia de usuario
 
     //valdacion para ver si se recibieron datos de ingreso

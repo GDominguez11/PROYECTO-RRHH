@@ -5,18 +5,18 @@ ob_start();
 <html lang="es">
 	<?php
 		$peticionAjax=false;
-		require_once "./controladores/vistasControlador.php";
+		require_once "./controllers/vistasControlador.php";
 		$IV = new vistasControlador();
 
 		$vistas=$IV->obtener_vistas_controlador();
 
 		if($vistas=="login" || $vistas=="404" || $vistas=="recuperacion-contrasena" ||$vistas=="verificar-codigo"
 		|| $vistas=="cambio-contrasena"){
-			require_once "./vistas/contenidos/".$vistas.".php";
+			require_once "./views/contenidos/".$vistas.".php";
 
 		}else{
 			$pagina=explode("/", $_GET['views']);
-			require_once './controladores/loginControlador.php';
+			require_once './controllers/loginControlador.php';
 			$lc= new loginUsuarios();
 			
 			/* if(!isset($_SESSION['usuario_login']) || !isset($_SESSION['token_login']) || !isset($_SESSION['id_login'])
