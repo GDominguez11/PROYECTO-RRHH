@@ -5,7 +5,7 @@
 		/*--------- Modelo obtener vistas ---------*/
 		protected static function obtener_vistas_modelo($vistas){
 
-			$listaBlanca=["home","home2","logout","tinyfilemanager"];
+			$listaBlanca=["home","home2","logout","tinyfilemanager","oficiales","docentes"];
 			$listaLogin=["login","recuperacion-contrasena","verificar-codigo","cambio-contrasena"];
 			if(in_array($vistas, $listaBlanca)){
 				if(is_file("./views/contenidos/".$vistas.".php")){

@@ -10,8 +10,8 @@ ob_start();
 
 		$vistas=$IV->obtener_vistas_controlador();
 
-		if($vistas=="login" || $vistas=="404" || $vistas=="recuperacion-contrasena" ||$vistas=="verificar-codigo"
-		|| $vistas=="cambio-contrasena"){
+		$listaLogin=["login","recuperacion-contrasena","verificar-codigo","cambio-contrasena","404"];
+		if(in_array($vistas, $listaLogin)){
 			require_once "./views/contenidos/".$vistas.".php";
 
 		}else{
@@ -35,5 +35,3 @@ ob_start();
 		}
 		include "./assets/inc/Script.php";
 	?>
-</body>
-</html>

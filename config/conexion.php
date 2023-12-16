@@ -74,5 +74,11 @@ class ConexionBD{
 			}
 		}
 
+
+		function disconnect () {
+			/* $this->_pdoStat->closeCursor();
+			$this->_pdoStat = null; */
+			$this->conexion = null;
+		}
     
 }
