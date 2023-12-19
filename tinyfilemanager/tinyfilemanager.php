@@ -1,6 +1,6 @@
 <?php
 //Default Configuration
-$CONFIG = '{"lang":"es","error_reporting":false,"show_hidden":false,"hide_Cols":false,"theme":"light"}';
+$CONFIG = '{"lang":"es","error_reporting":false,"show_hidden":false,"hide_Cols":false,"theme":"dark"}';
 
 /**
  * H3K | Tiny File Manager V2.5.3
@@ -84,7 +84,7 @@ $iconv_input_encoding = 'UTF-8';
 
 // date() format for file modification date
 // Doc - https://www.php.net/manual/en/function.date.php
-$datetime_format = 'm/d/Y h:i:s A';
+$datetime_format = 'd/m/Y h:i:s A';
 
 // Path display mode when viewing file information
 // 'full' => show full path
